@@ -8,7 +8,7 @@ from decorators import my_logger, my_timer
 import sys
 
 # Ausgabe in die Datei umleiten
-sys.stdout = open('/content/ausgabe2.txt', 'w')
+sys.stdout = open('/content/ausgabe.txt', 'w')
 
 # Load dataset
 data = pd.read_csv('Advertising.csv')
