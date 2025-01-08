@@ -5,6 +5,10 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, classification_report
 from decorators import my_logger, my_timer
+import sys
+
+# Ausgabe in die Datei umleiten
+sys.stdout = open('ausgabe.txt', 'w')
 
 # Load dataset
 data = pd.read_csv('Advertising.csv')
@@ -79,3 +83,8 @@ if __name__ == '__main__':
           f"- Test data: test_data.csv, test_labels.csv\n"
           f"- Reference accuracy: {reference_accuracy_file}\n"
           f"- Reference confusion matrix: {reference_confusion_matrix_file}")
+
+# Ausgabe zurück auf die Konsole umleiten
+sys.stdout.close()
+sys.stdout = sys.__stdout__
+
