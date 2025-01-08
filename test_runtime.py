@@ -2,6 +2,10 @@ import unittest
 import pandas as pd
 import numpy as np
 from main_runtime import TheAlgorithm, X_train, y_train
+import sys
+
+# Ausgabe in die Datei umleiten
+sys.stdout = open('ausgabe2.txt', 'w')
 
 class TestAlgorithm(unittest.TestCase):
 
@@ -50,3 +54,8 @@ class TestAlgorithm(unittest.TestCase):
 # Run the unit tests
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+# Ausgabe zurück auf die Konsole umleiten
+sys.stdout.close()
+sys.stdout = sys.__stdout__
+
