@@ -5,7 +5,7 @@ from main_runtime import TheAlgorithm, X_train, y_train
 import sys
 
 # Ausgabe in die Datei umleiten
-sys.stdout = open('ausgabe2.txt', 'w')
+sys.stdout = open('/content/ausgabe2.txt', 'w')
 
 class TestAlgorithm(unittest.TestCase):
 
